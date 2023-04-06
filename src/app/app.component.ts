@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
-import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +15,7 @@ export class AppComponent implements OnInit {
   randomColumna: number = 0;
   randomFila: number = 0;
   imgXUrl = './assets/images/x.png';
+  indurain: number = 0;
 
   ngOnInit(): void {
     this.columnas  = parseInt(prompt('Introduce el número de columnas'), 10);
@@ -41,6 +41,9 @@ export class AppComponent implements OnInit {
     } else {
       this.array[i][j] = './assets/images/skull.png';
     }
+    let h1$$ = document.querySelector('[data-function="attempts"]');
+    this.indurain++;
+    h1$$.textContent = this.indurain.toString();
   }
 
 }
